@@ -1,33 +1,20 @@
 const mongoose = require('mongoose');
 
 const destinationSchema = new mongoose.Schema({
+    
+    nameSeller: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
-    description: {
-        type: String,
-        required: true,
-    },
-    images: [
-        {
-            type: String,
-        }
-    ],
-    sellerName: {
+    lastName: {
         type: String,
         required: true
     },
-    clientName: {
-        type: String,
-        required: true
-    },
-    clientLastName: {
-        type: String,
-        required: true
-    },
-    clientEmail: {
+    email: {
         type: String,
         required: true
     },
@@ -35,26 +22,26 @@ const destinationSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    company: {
+    enterprice: {
         type: String,
         required: true
     },
-    industry: {
+    category: {
         type: String,
         required: true
     },
-    companySize: {
+    size: {
         type: String,
         required: true
     },
-    specifications: {
+    description: {
         type: String,
         required: true
     },
-    checkboxValue: {
+    notification: {
         type: String,
         enum: ['option1', 'option2', 'option3'],
-        required: true
+        required: false
     }
 });
 
