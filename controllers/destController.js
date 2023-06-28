@@ -25,9 +25,17 @@ const getDestinationById = async (req, res) => {
 
 const createDestination = async (req, res) => {
     const destination = new Destination({
+        nameSeller: req.body.nameSeller,
         name: req.body.name,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        location: req.body.location,
+        enterprice: req.body.enterprice,
+        category: req.body.category,
+        size: req.body.size,
         description: req.body.description,
-        images: req.files
+        notification: req.body.notification,
+        
     });
     try {
         const newDestination = await destination.save();
