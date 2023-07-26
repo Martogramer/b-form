@@ -1,12 +1,12 @@
 const app = require("./app.js");
 const connectToDataBase = require("./db.js")
 
-const port = 3001;
+
 
 connectToDataBase()
     .then(() => {
-        app.listen(port, () => {
-            console.log(`Servidor escuchando en el puerto ${port}`);
+        app.listen(process.env.PORT, () => {
+            console.log(`Servidor escuchando en el puerto ${process.env.PORT}`);
         });
     })
     .catch((error) => {
